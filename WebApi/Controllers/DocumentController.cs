@@ -55,8 +55,6 @@ namespace WebAPI.Controllers
             {
                 var documentHelper = new DocumentHelper(_configuration);
 
-                
-
                 if (await documentHelper.UploadBlob(request.FileFullName))
                 {
                     var result = await _mediator.Send(new AddDocumentRequest()
@@ -66,8 +64,6 @@ namespace WebAPI.Controllers
                         FileSize = request.FileSize,
                         DateModified = DateTime.Now
                     });
-
-                   
 
                     return new JsonResult(result.Entity)
                     {
