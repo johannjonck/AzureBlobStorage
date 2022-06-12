@@ -93,8 +93,9 @@ namespace WebAPI.Controllers
                 var documentHelper = new DocumentHelper(_configuration);
                 var originalBlobFile = await documentHelper.DownloadBlobFromStorageAccount(request.FileFullName);
                 var content = new StreamContent(originalBlobFile);
+                var fileContentType = _configuration.GetSection("BlobStorage").GetSection("FileContentType").Value;
 
-                content.Headers.ContentType = new MediaTypeHeaderValue("text/plain"); //Get from .json
+                content.Headers.ContentType = new MediaTypeHeaderValue(fileContentType);
                 content.Headers.ContentLength = originalBlobFile.GetBuffer().Length;
 
                 string content2 = new StreamReader(originalBlobFile).ReadToEnd();
