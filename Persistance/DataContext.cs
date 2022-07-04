@@ -15,11 +15,12 @@ namespace Persistance
         //NOTE: Not used for in memory database. comment this out when running the EF database update command
         //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         //{
-        //    optionsBuilder.UseSqlServer(@"Server=[];Database=QBlobStorageDB; User Id=[]; Password=[]");
         //    //optionsBuilder.UseSqlServer(@"Server = ******.database.windows.net; Database = {DbName}; User Id = ****; Password = ****");
         //}
 
         public DbSet<Document> Document { get; set; }
+
+        public DbSet<User> User { get; set; }
 
         DatabaseFacade IDbContext.Database
         {

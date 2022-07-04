@@ -9,6 +9,8 @@ namespace Persistance
     {
         public DbSet<Document> Document { get; set; }
 
+        public DbSet<User> User { get; set; }
+
         DatabaseFacade Database { get; }
 
         int SaveChanges();
