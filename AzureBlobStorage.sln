@@ -15,6 +15,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain", "Domain\Domain.csp
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Infrastructure", "Infrastructure\Infrastructure.csproj", "{AD260700-1FD5-46F2-933D-888286AF1849}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Authentication", "Authentication\Authentication.csproj", "{836E65C2-87BB-4EFF-9095-276C3CFD951E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{AD260700-1FD5-46F2-933D-888286AF1849}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AD260700-1FD5-46F2-933D-888286AF1849}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AD260700-1FD5-46F2-933D-888286AF1849}.Release|Any CPU.Build.0 = Release|Any CPU
+		{836E65C2-87BB-4EFF-9095-276C3CFD951E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{836E65C2-87BB-4EFF-9095-276C3CFD951E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{836E65C2-87BB-4EFF-9095-276C3CFD951E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{836E65C2-87BB-4EFF-9095-276C3CFD951E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
