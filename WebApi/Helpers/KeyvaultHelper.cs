@@ -14,8 +14,8 @@ namespace WebApi.Helpers
 
         public async Task<string> GetSecret(string secretName)
         {
-            var keyVaultName = "kv-TescoDesign-qa";
-            var kvUri = "https://kv-tescodesign-qa.vault.azure.net/";
+            var keyVaultName = "";
+            var kvUri = "";
             SecretClientOptions options = new SecretClientOptions()
             {
                 Retry =
