@@ -8,17 +8,15 @@ namespace Domain.Entities.Employee
 
         public string Surname { get; set; }
 
-        public int IdNummber { get; set; }
+        public int IdNumber { get; set; }
 
         public bool IsDeleted { get; set; }
 
-        [Column("AddressId")]
         [ForeignKey("EmployeeAddress")]
         public int EmployeeAddressId { get; set; }
 
         public EmployeeAddress EmployeeAddress { get; set; }
 
-        [Column("GroupId")]
         [ForeignKey("EmployeeGroup")]
         public int EmployeeGroupId { get; set; }
 

@@ -1,4 +1,4 @@
-﻿using Application.Logic.Employee.Dtos;
+﻿using Application.Dtos;
 
 namespace Application.Logic.Employee.Responses
 {

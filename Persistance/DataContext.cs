@@ -12,18 +12,18 @@ namespace Persistance
         }
 
         //NOTE: comment this out when running the EF database update command
-        //public DataContext(DbContextOptions<DataContext> options)
-        //    : base(options)
-        //{
-        //}
+        public DataContext(DbContextOptions<DataContext> options)
+            : base(options)
+        {
+        }
 
         //NOTE: Not used for in memory database. comment this out when running the EF database update command
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            //"Server=(localdb)\\MSSQLLocalDB;Database=QBlobStorageDB"
-            optionsBuilder.UseSqlServer(@"Server=(localdb)\MSSQLLocalDB;Database=QBlobStorageDB");
-            //optionsBuilder.UseSqlServer(@"Server = ******.database.windows.net; Database = {DbName}; User Id = ****; Password = ****");
-        }
+        //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        //{
+        //    //"Server=(localdb)\\MSSQLLocalDB;Database=QBlobStorageDB"
+        //    optionsBuilder.UseSqlServer(@"Server=(localdb)\MSSQLLocalDB;Database=QBlobStorageDB");
+        //    //optionsBuilder.UseSqlServer(@"Server = ******.database.windows.net; Database = {DbName}; User Id = ****; Password = ****");
+        //}
 
         public DbSet<Document> Document { get; set; }
 

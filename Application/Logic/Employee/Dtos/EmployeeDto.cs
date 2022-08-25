@@ -1,4 +1,4 @@
-﻿namespace Application.Logic.Employee.Dtos
+﻿namespace Application.Dtos
 {
     public class EmployeeDto
     {
@@ -8,7 +8,7 @@
 
         public string Surname { get; set; }
 
-        public int IdNummber { get; set; }
+        public int IdNumber { get; set; }
 
         public bool IsDeleted { get; set; }
 
