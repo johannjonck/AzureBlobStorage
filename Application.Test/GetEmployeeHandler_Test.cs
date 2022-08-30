@@ -68,7 +68,24 @@ namespace Application.Test
                     FirstName = A.Dummy<string>(),
                     IdNumber = A.Dummy<int>(),
                     EmployeeAddressId = A.Dummy<int>(),
+                    EmployeeAddress = new EmployeeAddress 
+                    {
+                        Id  =   1,
+                        Address1 = A.Dummy<string>(),
+                        Address2 = A.Dummy<string>(),
+                        Address3 = A.Dummy<string>(),
+                        Address4 = A.Dummy<string>(),
+                        PostalCode = A.Dummy<int>(),
+                        DateModified = A.Dummy<DateTime>()
+                    },
                     EmployeeGroupId = A.Dummy<int>(),
+                    EmployeeGroup = new EmployeeGroup
+                    {
+                        Id = 1,
+                        Name  =A.Dummy<string>(),
+                        IsDeleted =false,
+                        DateModified = A.Dummy<DateTime>()
+                    },
                     IsDeleted = A.Dummy<bool>(),
                     DateModified = A.Dummy<DateTime>()
                 };
@@ -91,6 +108,11 @@ namespace Application.Test
             Assert.IsNotNull(result_Entity);
 
             Assert.AreEqual(request.EmployeeId, result_Entity.EmployeeDto.Id);
+
+            Assert.AreEqual(1, result_Entity.EmployeeDto.EmployeeAddress.Id);
+
+            Assert.AreEqual(1, result_Entity.EmployeeDto.EmployeeGroup.Id);
+
         }
 
         public GetEmployeeRequest MockGetEmployeeRequest()

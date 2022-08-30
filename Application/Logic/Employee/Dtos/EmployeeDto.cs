@@ -1,4 +1,6 @@
-﻿namespace Application.Dtos
+﻿using Application.Logic.Employee.Dtos;
+
+namespace Application.Dtos
 {
     public class EmployeeDto
     {
@@ -13,6 +15,10 @@
         public bool IsDeleted { get; set; }
 
         public int EmployeeAddressId { get; set; }
+
+        public EmployeeAddressDto EmployeeAddress { get; set; }
+
+        public EmployeeGroupDto EmployeeGroup { get; set; }
 
         public int EmployeeGroupId { get; set; }
 

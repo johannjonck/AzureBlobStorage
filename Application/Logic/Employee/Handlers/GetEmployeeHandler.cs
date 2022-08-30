@@ -2,6 +2,7 @@
 using Application.Logic.Employee.Requests;
 using Application.Logic.Employee.Responses;
 using AutoMapper;
+using Microsoft.EntityFrameworkCore;
 using Persistance;
 
 namespace Application.Logic.Employee.Handlers
@@ -18,7 +19,11 @@ namespace Application.Logic.Employee.Handlers
 
         public override HandlerResult<GetEmployeeResponse> HandleRequest(GetEmployeeRequest request, CancellationToken cancellationToken, HandlerResult<GetEmployeeResponse> result)
         {
-            var employee = _dbContext.Employee.Where(x => x.Id == request.EmployeeId && x.IsDeleted == request.IsDeleted).FirstOrDefault();
+            var employee = _dbContext.Employee
+                                     .Include(ea => ea.EmployeeAddress)
+                                     .Include(eg => eg.EmployeeGroup)
+                                     .Where(e => e.Id == request.EmployeeId && e.IsDeleted == request.IsDeleted)
+                                     .FirstOrDefault();
 
             result.Entity = new GetEmployeeResponse
             {
