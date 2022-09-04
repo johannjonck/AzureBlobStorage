@@ -7,9 +7,6 @@ namespace Persistance
 {
     public class DataContext : DbContext, IDbContext
     {
-        public DataContext(DbContextOptions options) : base(options)
-        {
-        }
 
         //NOTE: comment this out when running the EF database update command
         public DataContext(DbContextOptions<DataContext> options)
