@@ -27,20 +27,7 @@ namespace Application.Logic.Employee.Handlers
                                      .Where(e => e.Id == request.EmployeeId && e.IsDeleted == request.IsDeleted)
                                      .FirstOrDefault();
 
-            //TODO: Just a test from a get request. this should move to insert or update handlers helpers...
-            //****************************************************************************************************
-            EmployeeValidator validator = new EmployeeValidator();
-            var employeeDto = _mapper.Map<EmployeeDto>(employee);
-            ValidationResult results = validator.Validate(employeeDto);
 
-            if (!results.IsValid)
-            {
-                foreach(ValidationFailure failure in results.Errors)
-                {
-                    Console.WriteLine($"{failure.PropertyName}: {failure.ErrorMessage}");
-                }
-            }
-            //****************************************************************************************************
 
             result.Entity = new GetEmployeeResponse
             {

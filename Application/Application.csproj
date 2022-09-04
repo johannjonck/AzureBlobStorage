@@ -6,17 +6,25 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Compile Remove="Logic\Employee\ValidationHelpers\AddEmployeeValidationHelper.cs" />
+  </ItemGroup>
+
 	<ItemGroup>
 		<PackageReference Include="AutoMapper" Version="11.0.1" />
 		<PackageReference Include="MediatR" Version="10.0.1" />
 		<PackageReference Include="Microsoft.AspNetCore.Http.Features" Version="2.2.0" />
 		<PackageReference Include="Microsoft.NETCore.App" Version="2.2.8" />
-		<PackageReference Include="FluentValidation" Version="11.0.3" />
-		<PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="11.0.3" />
+		<!--<PackageReference Include="FluentValidation" Version="11.0.3" />
+		<PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="11.0.3" />-->
 	</ItemGroup>
 
 	<ItemGroup>
 	  <ProjectReference Include="..\Persistance\Persistance.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Folder Include="Logic\Employee\ValidationHelpers\" />
 	</ItemGroup>
 
 </Project>

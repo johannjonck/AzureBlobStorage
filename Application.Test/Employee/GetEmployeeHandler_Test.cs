@@ -8,7 +8,7 @@ using FakeItEasy;
 using Infrastructure.Assemblers;
 using Persistance;
 
-namespace Application.Test
+namespace Application.Test.Employee
 {
     [TestClass]
     public class GetEmployeeHandler_Test
@@ -61,16 +61,16 @@ namespace Application.Test
 
             using (var mockDbContext = new MockDbContext())
             {
-                var employee = new Employee
+                var employee = new Domain.Entities.Employee.Employee
                 {
                     Id = 1,
                     Surname = A.Dummy<string>(),
                     FirstName = A.Dummy<string>(),
                     IdNumber = A.Dummy<int>(),
                     EmployeeAddressId = A.Dummy<int>(),
-                    EmployeeAddress = new EmployeeAddress 
+                    EmployeeAddress = new EmployeeAddress
                     {
-                        Id  =   1,
+                        Id = 1,
                         Address1 = A.Dummy<string>(),
                         Address2 = A.Dummy<string>(),
                         Address3 = A.Dummy<string>(),
@@ -82,8 +82,8 @@ namespace Application.Test
                     EmployeeGroup = new EmployeeGroup
                     {
                         Id = 1,
-                        Name  =A.Dummy<string>(),
-                        IsDeleted =false,
+                        Name = A.Dummy<string>(),
+                        IsDeleted = false,
                         DateModified = A.Dummy<DateTime>()
                     },
                     IsDeleted = A.Dummy<bool>(),

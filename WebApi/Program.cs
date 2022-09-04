@@ -1,8 +1,10 @@
 using Application.Logic.Document.Requests;
+//using Application.Logic.Employee.PipelineBehaviours;
 using Infrastructure.Assemblers;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 using Persistance;
+using FluentValidation.AspNetCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -18,6 +20,14 @@ builder.Services.AddMediatR(AppDomain.CurrentDomain.GetAssemblies());
 builder.Services.AddMediatR(typeof(ListDocumentRequest).Assembly);
 builder.Services.AddAutoMapper(typeof(DocumentMappingProfile));
 builder.Services.AddControllers().AddNewtonsoftJson();
+//builder.Services.AddTransient(typeof(IPipelineBehavior<,>), typeof(ValidationPipelineBehaviour<,>));
+
+//builder.Services.AddControllers().AddFluentValidation(fv =>
+//{
+//    fv.RegisterValidatorsFromAssemblies<Startup>();
+//    //fv.RunDefaultMvcValidationAfterFluentValidationExecte = false;
+//});
+
 
 //services cors
 builder.Services.AddCors(p => p.AddPolicy("corsapp", builder =>

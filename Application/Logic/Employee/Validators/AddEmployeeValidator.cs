@@ -1,11 +1,11 @@
-﻿using Application.Dtos;
+﻿using Application.Logic.Employee.Requests;
 using FluentValidation;
 
 namespace Application.Logic.Employee.Validators
 {
-    public class EmployeeValidator : AbstractValidator<EmployeeDto>
+    public class AddEmployeeValidator : AbstractValidator<AddEmployeeRequest>
     {
-        public EmployeeValidator()
+        public AddEmployeeValidator()
         {
             RuleFor(x => x.FirstName).NotNull().WithMessage(ValidationMessages.Requires_Employee_FirstName).NotEmpty().WithMessage(ValidationMessages.Requires_Employee_FirstName);
             RuleFor(x => x.Surname).NotNull().WithMessage(ValidationMessages.Requires_Employee_Surname).NotEmpty().WithMessage(ValidationMessages.Requires_Employee_Surname);

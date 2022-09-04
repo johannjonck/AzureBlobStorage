@@ -8,7 +8,7 @@ namespace Domain.Entities.Employee
 
         public string Surname { get; set; }
 
-        public int IdNumber { get; set; }
+        public long IdNumber { get; set; }
 
         public bool IsDeleted { get; set; }
 
