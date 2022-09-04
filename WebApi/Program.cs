@@ -24,8 +24,13 @@ builder.Services.AddMediatR(typeof(ListDocumentRequest).Assembly);
 builder.Services.AddAutoMapper(typeof(DocumentMappingProfile));
 builder.Services.AddControllers().AddNewtonsoftJson();
 
-builder.Services.AddValidatorsFromAssembly(typeof(AddDocumentRequest).Assembly);
+//builder.Services.AddValidatorsFromAssembly(typeof(AddDocumentRequest).Assembly);
 builder.Services.AddTransient(typeof(IPipelineBehavior<,>), typeof(ValidationPipelineBehaviour<,>));
+AssemblyScanner.FindValidatorsInAssembly(typeof(AddDocumentValidator).Assembly)
+.ForEach(result =>
+{
+    builder.Services.AddTransient(result.InterfaceType, result.ValidatorType);
+});
 
 //services cors
 builder.Services.AddCors(p => p.AddPolicy("corsapp", builder =>
