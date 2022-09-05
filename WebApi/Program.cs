@@ -7,7 +7,7 @@ using FluentValidation.AspNetCore;
 using Application.Logic.Employee.Validators;
 using Application.Logic.Employee.Requests;
 using FluentValidation;
-using Application.Logic.Document.Validators;
+using Application.Logic.ValidationHelpers;
 
 var builder = WebApplication.CreateBuilder(args);
 

@@ -1,7 +1,7 @@
 ﻿using FluentValidation;
 using MediatR;
 
-namespace Application.Logic.Document.Validators
+namespace Application.Logic.ValidationHelpers
 {
     public class ValidationPipelineBehaviour<TRequest, TResponse> : IPipelineBehavior<TRequest, TResponse> where TRequest : IRequest<TResponse>
     {
@@ -17,9 +17,11 @@ namespace Application.Logic.Document.Validators
                 var context = new ValidationContext<TRequest>(request);
                 var validationResults = await Task.WhenAll(_validators.Select(v => v.ValidateAsync(context, cancellationToken)));
                 var failures = validationResults.SelectMany(r => r.Errors).Where(f => f != null).ToList();
-                if (failures.Count != 0)
-                    //TODO: Create notificion errors...
+
+                if (failures.Any(x => x.Severity == Severity.Error))
+                {
                     throw new ValidationException(failures);
+                }
             }
             return await next();
         }

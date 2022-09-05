@@ -7,7 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Logic\Employee\ValidationHelpers\AddEmployeeValidationHelper.cs" />
+    <Compile Remove="Logic\ValidationHelpers\AddEmployeeValidationHelper.cs" />
   </ItemGroup>
 
 	<ItemGroup>
@@ -22,10 +22,6 @@
 
 	<ItemGroup>
 	  <ProjectReference Include="..\Persistance\Persistance.csproj" />
-	</ItemGroup>
-
-	<ItemGroup>
-	  <Folder Include="Logic\Employee\ValidationHelpers\" />
 	</ItemGroup>
 
 </Project>
