@@ -19,7 +19,6 @@ namespace Application.Logic.Employee.Handlers
             _mapper = mapper ?? throw new ArgumentNullException(nameof(mapper));
         }
 
-        //TODO: Change to async...
         public override HandlerResult<AddEmployeeResponse> HandleRequest(AddEmployeeRequest request, CancellationToken cancellationToken, HandlerResult<AddEmployeeResponse> result)
         {
             var newEmployee = new Domain.Entities.Employee.Employee()

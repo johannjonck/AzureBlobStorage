@@ -1,11 +1,9 @@
 ﻿using Application.Dtos;
 using Application.Logic.Document.Requests;
 using MediatR;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Net.Http.Headers;
 using WebApi;
-using WebApi.Helpers;
 
 namespace WebAPI.Controllers
 {
